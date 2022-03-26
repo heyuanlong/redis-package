@@ -1,0 +1,23 @@
+### 此文件不能正常工作
+
+
+[Unit]
+Description=https://github.com/heyuanlong/redis-package
+#
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/data/redis-package/
+ExecStart=./redis-server conf/redis.conf
+
+Restart=always
+RestartSec=10
+
+
+#超时设置 秒数 具体作用只能字面上理解 没有实际测试过
+TimeoutStartSec=120
+TimeoutStopSec=120
+
+#TimeoutSec 定义 Systemd 停止当前服务之前等待的秒数
+TimeoutSec=120
